@@ -1,18 +1,18 @@
 'use strict';
 
-var MyStem = require('../lib/MyStem');
+const MyStem = require('../lib/MyStem');
 
-var myStem = new MyStem();
+const myStem = new MyStem();
 
 myStem.start();
 
-var words = ['карусели', 'немцы', 'печалька'];
+let words = ['карусели', 'немцы', 'печалька'];
 
-var promises = words.map(function(word) {
+let promises = words.map(function (word) {
     return myStem.parse(word)
 });
 
-Promise.all(promises).then(function(lemmas) {
+Promise.all(promises).then((lemmas) => {
     console.log(lemmas);
     myStem.stop();
 });

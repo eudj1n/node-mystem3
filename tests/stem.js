@@ -1,9 +1,8 @@
-var assert = require('chai').assert;
-
-var MyStem = require('../lib/MyStem');
+const assert = require('chai').assert;
+const MyStem = require('../lib/MyStem');
 
 test('Lemmatize known word', function (done) {
-    var myStem = new MyStem();
+    let myStem = new MyStem();
     myStem.start();
 
     myStem.parse("немцы").then(function (lemma) {
@@ -15,7 +14,7 @@ test('Lemmatize known word', function (done) {
 });
 
 test('Lemmatize text', function (done) {
-    var myStem = new MyStem();
+    let myStem = new MyStem();
     myStem.start();
 
     myStem.parse("Программа производит морфологический анализ текста на русском языке").then(function (lemma) {
@@ -28,7 +27,7 @@ test('Lemmatize text', function (done) {
 
 
 test('Lemmatize unknown word', function (done) {
-    var myStem = new MyStem();
+    let myStem = new MyStem();
     myStem.start();
 
     myStem.parse("кркркрк").then(function (lemma) {
@@ -40,7 +39,7 @@ test('Lemmatize unknown word', function (done) {
 });
 
 test('Lemmatize non word', function (done) {
-    var myStem = new MyStem();
+    let myStem = new MyStem();
     myStem.start();
 
     myStem.parse("123яблоко").then(function (lemma) {

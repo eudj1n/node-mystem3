@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/eudj1n/node-mystem3.svg)](https://travis-ci.org/eudj1n/node-mystem3)
+
 MyStem
 ------
 
@@ -7,7 +9,7 @@ This module contains a wrapper for an excellent morphological analyzer for Russi
 This module start mystem as separate process and communicates with it. 
 This allows to avoid process start overhead.
 
-## Installion
+## Installation
 
 ```bash
 npm i eudj1n/node-mystem3 --save
@@ -17,9 +19,9 @@ npm i eudj1n/node-mystem3 --save
 
 ```javascript
 
-var MyStem = require('mystem3');
+const MyStem = require('mystem3');
 
-var myStem = new MyStem();
+let myStem = new MyStem();
 myStem.start(); // Run mystem in separate process
 
 myStem.parse("немцы").then(function(lemma) {
@@ -47,17 +49,16 @@ Param "options" contains run options for mystem. Default values:
 ```bash
 --format json --eng-gr -i
 ```
-
+See all available options here: https://tech.yandex.ru/mystem/doc/index-docpage/#options
 ### myStem.stop()
 
 Stops mystem process. Will be automatically stopped on process.exit();
 
-
 ### myStem.parse(text)
 
-Returns promise with analysis of provided text
+Returns promise with analysis of provided text.
 
 ## AUTHOR
-Original author koorchik (Viktor Turskyi)
+eudj1n (Eugene Kozlov)
 
-Forked by eudj1n
+Forked from koorchik (Viktor Turskyi)
