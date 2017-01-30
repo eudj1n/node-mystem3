@@ -22,7 +22,7 @@ var MyStem = require('mystem3');
 var myStem = new MyStem();
 myStem.start(); // Run mystem in separate process
 
-myStem.lemmatize("немцы").then(function(lemma) {
+myStem.parse("немцы").then(function(lemma) {
     console.log(lemma);
 }).then(function() {
     myStem.stop(); // Or you can write process.exit();
